@@ -8,26 +8,16 @@
 <meta name="description" content="AGRI-LINK ETHIOPIA - Connecting Farmers, Investors and Jobs">
 <title>AGRI-LINK ETHIOPIA</title>
 <style>
-:root{
- --green:#075e45;--green2:#0b8060;--gold:#e5a928;
- --bg:#f4f7f5;--white:#fff;--ink:#18352b;
- --muted:#708078;--line:#e3ebe6;--red:#bd3e3e;
-}
+:root{--green:#075e45;--green2:#0b8060;--gold:#e5a928;--bg:#f4f7f5;--white:#fff;--ink:#18352b;--muted:#708078;--line:#e3ebe6;--red:#bd3e3e}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Ethiopic",sans-serif;
- background:var(--bg);color:var(--ink)}
-header{background:var(--green);color:white;padding:16px 5%;
- display:flex;align-items:center;justify-content:space-between;
- gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
-.logo{font-size:21px;font-weight:900;letter-spacing:.3px}
+body{margin:0;font-family:Arial,"Noto Sans Ethiopic",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--green);color:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.logo{font-size:21px;font-weight:900}
 .logo span{color:#ffd36a}
-.header-right{display:flex;gap:8px;align-items:center}
-button,select,input,textarea{font:inherit}
+.lang{padding:9px;border-radius:8px;border:1px solid #ffffff66;background:#ffffff15;color:white}
+button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-.lang{padding:9px;border-radius:8px;border:1px solid #ffffff66;
- background:#ffffff15;color:white}
-.hero{background:linear-gradient(120deg,#064b38,#0c8060);
- color:white;padding:55px 6%;text-align:center}
+.hero{background:linear-gradient(120deg,#064b38,#0c8060);color:white;padding:55px 6%;text-align:center}
 .hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 15px}
 .hero p{max-width:720px;margin:0 auto 24px;line-height:1.8;color:#e1f4e9}
 .hero-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
@@ -37,24 +27,18 @@ button{cursor:pointer}
 .outline{background:transparent;border:1px solid #ffffff99;color:white}
 .container{max-width:1200px;margin:auto;padding:25px 4%}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-25px}
-.stat{background:white;padding:20px;border-radius:13px;text-align:center;
- box-shadow:0 5px 18px #153d2910}
+.stat{background:white;padding:20px;border-radius:13px;text-align:center;box-shadow:0 5px 18px #153d2910}
 .stat strong{display:block;font-size:26px;color:var(--green)}
 .stat small{color:var(--muted)}
 .section-title{margin:35px 0 16px;font-size:23px;color:var(--green)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:white;border:1px solid var(--line);border-radius:13px;
- padding:19px;box-shadow:0 3px 12px #153d2908}
+.card{background:white;border:1px solid var(--line);border-radius:13px;padding:19px;box-shadow:0 3px 12px #153d2908}
 .card h3{margin:8px 0;color:var(--green)}
 .card p{color:var(--muted);line-height:1.65}
 .card-icon{font-size:30px}
-.tag{display:inline-block;background:#eaf5ee;color:var(--green);
- padding:5px 9px;border-radius:20px;font-size:12px;margin:3px}
-nav{background:white;display:flex;gap:5px;padding:10px 4%;
- overflow-x:auto;border-bottom:1px solid var(--line);position:sticky;
- top:65px;z-index:8}
-nav button{border:0;background:transparent;padding:12px 14px;
- white-space:nowrap;color:#53665d;border-radius:8px;font-weight:bold}
+.tag{display:inline-block;background:#eaf5ee;color:var(--green);padding:5px 9px;border-radius:20px;font-size:12px;margin:3px}
+nav{background:white;display:flex;gap:5px;padding:10px 4%;overflow-x:auto;border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:8}
+nav button{border:0;background:transparent;padding:12px 14px;white-space:nowrap;color:#53665d;border-radius:8px;font-weight:bold}
 nav button.active,nav button:hover{background:#e9f4ed;color:var(--green)}
 .page{display:none}
 .page.active{display:block}
@@ -62,60 +46,36 @@ nav button.active,nav button:hover{background:#e9f4ed;color:var(--green)}
 .field{display:flex;flex-direction:column;gap:6px}
 .field.full{grid-column:1/-1}
 .field label{font-weight:bold;font-size:14px}
-.field input,.field select,.field textarea{
- width:100%;padding:12px;border:1px solid #d9e4dc;
- border-radius:8px;background:#fff;outline-color:var(--green2)
-}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d9e4dc;border-radius:8px;background:#fff;outline-color:var(--green2)}
 .field textarea{min-height:95px;resize:vertical}
-.submit{background:var(--green);color:white;border:0;padding:13px 20px;
- border-radius:8px;font-weight:bold;margin-top:15px}
-.notice{padding:13px;background:#edf7ef;border-left:4px solid var(--green);
- border-radius:7px;line-height:1.6}
-.item{margin:12px 0;padding:15px;background:white;border:1px solid var(--line);
- border-radius:10px}
+.submit{background:var(--green);color:white;border:0;padding:13px 20px;border-radius:8px;font-weight:bold;margin-top:15px}
+.notice{padding:13px;background:#edf7ef;border-left:4px solid var(--green);border-radius:7px;line-height:1.6}
+.item{margin:12px 0;padding:15px;background:white;border:1px solid var(--line);border-radius:10px}
 .item h3{margin:4px 0;color:var(--green)}
 .item p{color:var(--muted);line-height:1.5}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
-.smallbtn{border:0;background:#e9f4ed;color:var(--green);
- padding:9px 12px;border-radius:7px;font-weight:bold}
-.danger{background:#fceeee;color:var(--red)}
+.smallbtn{border:0;background:#e9f4ed;color:var(--green);padding:9px 12px;border-radius:7px;font-weight:bold}
 footer{background:#073d2e;color:#d9eee3;padding:35px 6%;margin-top:40px}
 footer p{line-height:1.7}
 footer a{color:#f4ca68}
-.empty{padding:25px;text-align:center;color:var(--muted);
- background:white;border-radius:10px}
-.search{width:100%;padding:13px;border:1px solid var(--line);
- border-radius:9px;margin-bottom:15px}
-.modal{display:none;position:fixed;inset:0;background:#0008;z-index:30;
- align-items:center;justify-content:center;padding:15px}
+.empty{padding:25px;text-align:center;color:var(--muted);background:white;border-radius:10px}
+.search{width:100%;padding:13px;border:1px solid var(--line);border-radius:9px;margin-bottom:15px}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:30;align-items:center;justify-content:center;padding:15px}
 .modal.show{display:flex}
-.modal-box{background:white;border-radius:14px;padding:23px;
- width:min(520px,100%);max-height:90vh;overflow:auto}
-.close{float:right;border:0;background:#eee;border-radius:50%;
- width:32px;height:32px}
-@media(max-width:760px){
- .grid{grid-template-columns:1fr 1fr}
- .stats{grid-template-columns:1fr 1fr}
- nav{top:60px}
-}
-@media(max-width:480px){
- .grid,.form-grid{grid-template-columns:1fr}
- .field.full{grid-column:auto}
- .hero{padding:42px 5%}
- .logo{font-size:17px}
-}
+.modal-box{background:white;border-radius:14px;padding:23px;width:min(520px,100%);max-height:90vh;overflow:auto}
+.close{float:right;border:0;background:#eee;border-radius:50%;width:32px;height:32px}
+@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}nav{top:60px}}
+@media(max-width:480px){.grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding:42px 5%}.logo{font-size:17px}}
 </style>
 </head>
 <body>
 
 <header>
  <div class="logo">🌱 AGRI-LINK <span>ETHIOPIA</span></div>
- <div class="header-right">
-  <select class="lang" id="language" onchange="changeLanguage()">
-   <option value="am">አማርኛ</option>
-   <option value="en">English</option>
-  </select>
- </div>
+ <select class="lang" id="language" onchange="changeLanguage()">
+  <option value="am">አማርኛ</option>
+  <option value="en">English</option>
+ </select>
 </header>
 
 <section class="hero">
@@ -135,15 +95,14 @@ footer a{color:#f4ca68}
   <div class="stat"><strong id="projectCount">0</strong><small>ፕሮጀክቶች</small></div>
   <div class="stat"><strong id="jobCount">0</strong><small>የሥራ ዕድሎች</small></div>
  </div>
-
  <h2 class="section-title">🌍 የመድረኩ ዋና አገልግሎቶች</h2>
  <div class="grid">
   <div class="card"><div class="card-icon">👨‍🌾</div><h3>የገበሬዎች መድረክ</h3><p>ገበሬዎችና ማህበራት ራሳቸውን፣ ምርታቸውንና ፍላጎታቸውን ያስመዝግቡ።</p><button class="smallbtn" onclick="showPage('register')">ይመዝገቡ</button></div>
   <div class="card"><div class="card-icon">🤝</div><h3>የኢንቨስተሮች ግንኙነት</h3><p>በግብርና ዘርፍ ለመዋዕለ ንዋይ የሚፈልጉ ኢንቨስተሮችን ያግኙ።</p><button class="smallbtn" onclick="showPage('investors')">ይመልከቱ</button></div>
   <div class="card"><div class="card-icon">💼</div><h3>የሥራ ዕድሎች</h3><p>የግብርናና የንግድ ሥራ ዕድሎችን ያግኙ።</p><button class="smallbtn" onclick="showPage('jobs')">ሥራ ይፈልጉ</button></div>
   <div class="card"><div class="card-icon">🌾</div><h3>የምርት ገበያ</h3><p>የግብርና ምርቶችን ለገዢዎች ያቅርቡ።</p><button class="smallbtn" onclick="showPage('market')">ገበያውን ይጎብኙ</button></div>
-  <div class="card"><div class="card-icon">🏗️</div><h3>የማህበረሰብ ፕሮጀክቶች</h3><p>የአካባቢ ልማትና የገቢ ማስገኛ ሀሳቦችን ያቅርቡ።</p><button class="smallbtn" onclick="showPage('projects')">ይመልከቱ</button></div>
-  <div class="card"><div class="card-icon">📊</div><h3>የተፅዕኖ መለኪያ</h3><p>የተፈጠሩ የሥራ ዕድሎችና የተጀመሩ ፕሮጀክቶችን ይከታተሉ።</p><button class="smallbtn" onclick="showPage('impact')">ውጤቱን ይመልከቱ</button></div>
+  <div class="card"><div class="card-icon">🏗️</div><h3>የማህበረሰብ ፕሮጀክቶች</h3><p>የአካባቢ ልማትና የገቢ ማስገኛ ሀሳቦችን ያቅርቡ።</p><button class="smallbtn" onclick="showPage('community')">ይመልከቱ</button></div>
+  <div class="card"><div class="card-icon">📊</div><h3>የተፅዕኖ መለኪያ</h3><p>የተጀመሩ ፕሮጀክቶችና የቀረቡ የሥራ ዕድሎችን ይከታተሉ።</p><button class="smallbtn" onclick="showPage('impact')">ውጤቱን ይመልከቱ</button></div>
  </div>
 </div>
 
@@ -160,7 +119,6 @@ footer a{color:#f4ca68}
 </nav>
 
 <main class="container">
-
 <section class="page active" id="home">
  <h2 class="section-title">ወደ AGRI-LINK ETHIOPIA እንኳን በደህና መጡ</h2>
  <div class="notice">ይህ መድረክ ገበሬዎችን፣ ማህበራትን፣ ኢንቨስተሮችን፣ ገዢዎችንና ሥራ ፈላጊዎችን በአንድ የዲጂታል መድረክ ለማገናኘት የተዘጋጀ ነው።</div>
@@ -170,8 +128,7 @@ footer a{color:#f4ca68}
 
 <section class="page" id="register">
  <h2 class="section-title">📝 የተጠቃሚ ምዝገባ</h2>
- <div class="card">
- <form id="registerForm">
+ <div class="card"><form id="registerForm">
   <div class="form-grid">
    <div class="field"><label>ሙሉ ስም</label><input name="name" required placeholder="ሙሉ ስም"></div>
    <div class="field"><label>የተጠቃሚ አይነት</label><select name="type" required><option value="">ይምረጡ</option><option>ገበሬ</option><option>የገበሬ ማህበር</option><option>ኢንቨስተር</option><option>ገዢ</option><option>ሥራ ፈላጊ</option><option>ሌላ</option></select></div>
@@ -180,18 +137,14 @@ footer a{color:#f4ca68}
    <div class="field"><label>ክልል</label><select name="region"><option>ሲዳማ</option><option>ኦሮሚያ</option><option>አማራ</option><option>ደቡብ ኢትዮጵያ</option><option>ሶማሌ</option><option>ትግራይ</option><option>አፋር</option><option>ቤኒሻንጉል ጉሙዝ</option><option>ጋምቤላ</option><option>ሐረሪ</option><option>አዲስ አበባ</option><option>ድሬዳዋ</option></select></div>
    <div class="field"><label>ወረዳ / ከተማ</label><input name="location" placeholder="የአካባቢ ስም"></div>
    <div class="field full"><label>ስለ እርስዎ / ድርጅትዎ</label><textarea name="details" placeholder="አጭር መግለጫ"></textarea></div>
-  </div>
-  <button class="submit">ምዝገባውን አስቀምጥ</button>
- </form>
- </div>
+  </div><button class="submit">ምዝገባውን አስቀምጥ</button>
+ </form></div>
 </section>
 
 <section class="page" id="projects">
  <h2 class="section-title">🏗️ የግብርና ኢንቨስትመንት ፕሮጀክቶች</h2>
  <input class="search" id="projectSearch" oninput="renderProjects()" placeholder="ፕሮጀክት ወይም አካባቢ ፈልግ...">
- <div class="card">
- <h3>አዲስ ፕሮጀክት ያቅርቡ</h3>
- <form id="projectForm">
+ <div class="card"><h3>አዲስ ፕሮጀክት ያቅርቡ</h3><form id="projectForm">
   <div class="form-grid">
    <div class="field"><label>የፕሮጀክት ስም</label><input name="title" required></div>
    <div class="field"><label>የፕሮጀክት ዘርፍ</label><select name="sector"><option>ቡና</option><option>እንስሳት እርባታ</option><option>እርሻ</option><option>መስኖ</option><option>ማር</option><option>ምግብ ማቀነባበር</option><option>ሌላ</option></select></div>
@@ -200,24 +153,19 @@ footer a{color:#f4ca68}
    <div class="field full"><label>የፕሮጀክት መግለጫ</label><textarea name="description" required></textarea></div>
    <div class="field"><label>የሚፈጥረው የሥራ ዕድል</label><input name="jobs" type="number" min="0"></div>
    <div class="field"><label>የአቅራቢው ስልክ</label><input name="phone" required></div>
-  </div>
-  <button class="submit">ፕሮጀክት አስገባ</button>
- </form>
- </div>
- <div id="projectList"></div>
+  </div><button class="submit">ፕሮጀክት አስገባ</button>
+ </form></div><div id="projectList"></div>
 </section>
 
 <section class="page" id="investors">
  <h2 class="section-title">🤝 የኢንቨስተሮች መድረክ</h2>
- <div class="notice">ኢንቨስተሮች በፕሮጀክቶች ላይ ያላቸውን ፍላጎት በቀጥታ ለማሳወቅ ይችላሉ። የገንዘብ ዝውውር በዚህ ድረገጽ አይፈጸምም።</div>
+ <div class="notice">ኢንቨስተሮች በፕሮጀክቶች ላይ ያላቸውን ፍላጎት ለማሳወቅ ይችላሉ። የገንዘብ ዝውውር በዚህ ድረገጽ አይፈጸምም።</div>
  <div id="investorList"></div>
 </section>
 
 <section class="page" id="jobs">
  <h2 class="section-title">💼 የሥራ ዕድሎች</h2>
- <div class="card">
- <h3>አዲስ የሥራ ዕድል ያስገቡ</h3>
- <form id="jobForm">
+ <div class="card"><h3>አዲስ የሥራ ዕድል ያስገቡ</h3><form id="jobForm">
   <div class="form-grid">
    <div class="field"><label>የሥራ መደብ</label><input name="title" required></div>
    <div class="field"><label>ድርጅት</label><input name="company" required></div>
@@ -225,18 +173,13 @@ footer a{color:#f4ca68}
    <div class="field"><label>የሥራ አይነት</label><select name="type"><option>ሙሉ ጊዜ</option><option>ከፊል ጊዜ</option><option>ጊዜያዊ</option><option>ልምምድ</option></select></div>
    <div class="field full"><label>የሥራ መግለጫ</label><textarea name="description" required></textarea></div>
    <div class="field"><label>የመገናኛ ስልክ</label><input name="phone" required></div>
-  </div>
-  <button class="submit">የሥራ ዕድል አስገባ</button>
- </form>
- </div>
- <div id="jobList"></div>
+  </div><button class="submit">የሥራ ዕድል አስገባ</button>
+ </form></div><div id="jobList"></div>
 </section>
 
 <section class="page" id="market">
  <h2 class="section-title">🌾 የግብርና ምርቶች ገበያ</h2>
- <div class="card">
- <h3>ምርትዎን ያስተዋውቁ</h3>
- <form id="marketForm">
+ <div class="card"><h3>ምርትዎን ያስተዋውቁ</h3><form id="marketForm">
   <div class="form-grid">
    <div class="field"><label>የምርት ስም</label><input name="title" required></div>
    <div class="field"><label>የምርት መጠን</label><input name="quantity" required placeholder="ለምሳሌ 10 ኩንታል"></div>
@@ -244,29 +187,21 @@ footer a{color:#f4ca68}
    <div class="field"><label>አካባቢ</label><input name="location" required></div>
    <div class="field"><label>ስልክ</label><input name="phone" required></div>
    <div class="field"><label>የምርት ሁኔታ</label><select name="quality"><option>ጥሩ</option><option>መካከለኛ</option><option>የተረጋገጠ</option></select></div>
-  </div>
-  <button class="submit">ምርት አስገባ</button>
- </form>
- </div>
- <div id="marketList"></div>
+  </div><button class="submit">ምርት አስገባ</button>
+ </form></div><div id="marketList"></div>
 </section>
 
 <section class="page" id="community">
  <h2 class="section-title">🏘️ የማህበረሰብ ልማት ፕሮጀክቶች</h2>
- <div class="card">
- <h3>የማህበረሰብ ሀሳብ ያቅርቡ</h3>
- <form id="communityForm">
+ <div class="card"><h3>የማህበረሰብ ሀሳብ ያቅርቡ</h3><form id="communityForm">
   <div class="form-grid">
    <div class="field"><label>የሀሳቡ ርዕስ</label><input name="title" required></div>
    <div class="field"><label>አካባቢ</label><input name="location" required></div>
    <div class="field full"><label>የሀሳቡ መግለጫ</label><textarea name="description" required></textarea></div>
    <div class="field"><label>የሚፈለገው ድጋፍ</label><input name="support"></div>
    <div class="field"><label>ስልክ</label><input name="phone" required></div>
-  </div>
-  <button class="submit">ሀሳቡን አስገባ</button>
- </form>
- </div>
- <div id="communityList"></div>
+  </div><button class="submit">ሀሳቡን አስገባ</button>
+ </form></div><div id="communityList"></div>
 </section>
 
 <section class="page" id="impact">
@@ -282,7 +217,7 @@ footer a{color:#f4ca68}
 
 <section class="page" id="admin">
  <h2 class="section-title">🔐 የአስተዳዳሪ ዳሽቦርድ</h2>
- <div class="notice">ይህ የሙከራ አስተዳደር ገጽ ነው። እውነተኛ የአስተዳዳሪ መግቢያና ፈቃድ በBackend ላይ መገንባት ያስፈልጋል።</div>
+ <div class="notice">ይህ የሙከራ አስተዳደር ገጽ ነው። ለእውነተኛ አስተዳደር የደህንነት መግቢያ መገንባት ያስፈልጋል።</div>
  <div class="grid">
   <div class="card"><h3>ተጠቃሚዎች</h3><strong id="adminUsers">0</strong></div>
   <div class="card"><h3>ፕሮጀክቶች</h3><strong id="adminProjects">0</strong></div>
@@ -294,313 +229,50 @@ footer a{color:#f4ca68}
 </section>
 </main>
 
-<div class="modal" id="modal">
- <div class="modal-box">
-  <button class="close" onclick="closeModal()">✕</button>
-  <h2 id="modalTitle">ዝርዝር</h2>
-  <div id="modalContent"></div>
- </div>
-</div>
+<div class="modal" id="modal"><div class="modal-box">
+ <button class="close" onclick="closeModal()">✕</button>
+ <h2 id="modalTitle">ዝርዝር</h2><div id="modalContent"></div>
+</div></div>
 
 <footer>
  <h2>🌱 AGRI-LINK ETHIOPIA</h2>
  <p>Connecting Farmers • Investors • Jobs</p>
  <p>የኢትዮጵያ ግብርናን በዲጂታል መንገድ ለማገናኘት፣ ለማሳደግና የሥራ ዕድሎችን ለመፍጠር።</p>
- <p>ኢሜይል: <a href="mailto:info@agrilinkethiopia.com">info@agrilinkethiopia.com</a></p>
- <small>© <span id="year"></span> AGRI-LINK ETHIOPIA. All rights reserved.</small>
+ <p>© <span id="year"></span> AGRI-LINK ETHIOPIA. All rights reserved.</p>
 </footer>
 
 <script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const SUPABASE_URL = "https://etmxjclobeayoogormoo.supabase.co";
-const SUPABASE_KEY = "sb_publishable_Z4COlEbN5hnnjcTm1YWyRg_sLkm__te";
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+"use strict";
 
-const data = {
- projects: [],
- jobs: [],
- products: [],
- community: []
+const DB={
+ users:"agri_users",
+ projects:"agri_projects",
+ jobs:"agri_jobs",
+ products:"agri_products",
+ community:"agri_community"
 };
 
-const $ = id => document.getElementById(id);
-
-function escapeHTML(v) {
- return String(v ?? "").replace(/[&<>"']/g, c => ({
-  "&":"&amp;", "<":"&lt;", ">":"&gt;",
-  '"':"&quot;", "'":"&#39;"
- }[c]));
+function getData(key){
+ try{
+  const value=JSON.parse(localStorage.getItem(DB[key])||"[]");
+  return Array.isArray(value)?value:[];
+ }catch(error){return [];}
 }
 
-function formValues(form) {
+function saveData(key,data){
+ localStorage.setItem(DB[key],JSON.stringify(data));
+}
+
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+ });
+}
+
+function formData(form){
  return Object.fromEntries(new FormData(form).entries());
 }
 
-async function submitForm(form, table, mapper) {
- const button = form.querySelector("button[type=submit],button:not([type])");
- if (button) {
-  button.disabled = true;
-  button.textContent = "በመላክ ላይ...";
- }
- try {
-  const payload = mapper(formValues(form));
-  const { error } = await db.from(table).insert(payload);
-  if (error) throw error;
-  form.reset();
-  alert("መረጃው ተልኳል። ከመታየቱ በፊት ይገመገማል።");
-  await loadData();
- } catch (error) {
-  console.error(error);
-  alert("ስህተት ተፈጥሯል፦ " + (error.message || "እንደገና ይሞክሩ።"));
- } finally {
-  if (button) {
-   button.disabled = false;
-   button.textContent = "እንደገና ይሞክሩ";
-  }
- }
-}
-
-function connectForm(id, table, mapper) {
- $(id).addEventListener("submit", e => {
-  e.preventDefault();
-  submitForm(e.target, table, mapper);
- });
-}
-
-connectForm("registerForm", "user_profiles", d => ({
- full_name: d.name.trim(),
- user_type: d.type,
- phone: d.phone.trim(),
- email: d.email || null,
- region: d.region || null,
- location: d.location || null,
- details: d.details || null
-}));
-
-connectForm("projectForm", "projects", d => ({
- title: d.title.trim(),
- sector: d.sector,
- location: d.location.trim(),
- capital: d.capital ? Number(d.capital) : 0,
- description: d.description.trim(),
- jobs: d.jobs ? Number(d.jobs) : 0,
- phone: d.phone.trim(),
- status: "pending"
-}));
-
-connectForm("jobForm", "jobs", d => ({
- title: d.title.trim(),
- company: d.company.trim(),
- location: d.location.trim(),
- job_type: d.type,
- description: d.description.trim(),
- phone: d.phone.trim(),
- status: "pending"
-}));
-
-connectForm("marketForm", "products", d => ({
- title: d.title.trim(),
- quantity: d.quantity.trim(),
- price: d.price ? Number(d.price) : null,
- location: d.location.trim(),
- phone: d.phone.trim(),
- quality: d.quality,
- status: "pending"
-}));
-
-connectForm("communityForm", "community_projects", d => ({
- title: d.title.trim(),
- location: d.location.trim(),
- description: d.description.trim(),
- support: d.support || null,
- phone: d.phone.trim(),
- status: "pending"
-}));
-
-async function loadData() {
- const tables = [
-  ["projects", "projects"],
-  ["jobs", "jobs"],
-  ["products", "products"],
-  ["community", "community_projects"]
- ];
-
- for (const [key, table] of tables) {
-  const { data: rows, error } = await db
-   .from(table)
-   .select("*")
-   .eq("status", "published")
-   .order("created_at", { ascending: false });
-
-  if (error) {
-   console.error(table, error);
-   data[key] = [];
-  } else {
-   data[key] = rows || [];
-  }
- }
- renderAll();
-}
-
-function renderProjects() {
- const search = ($("projectSearch").value || "").toLowerCase();
- const rows = data.projects.filter(p =>
-  (p.title + " " + p.location + " " + p.sector)
-   .toLowerCase().includes(search)
- );
-
- $("projectList").innerHTML = rows.length ? rows.map(p => `
-  <div class="item">
-   <span class="tag">${escapeHTML(p.sector)}</span>
-   <h3>${escapeHTML(p.title)}</h3>
-   <p>📍 ${escapeHTML(p.location)}</p>
-   <p>💰 ${escapeHTML(p.capital)} ብር</p>
-   <p>${escapeHTML(p.description)}</p>
-   <p>👷 የሥራ ዕድል: ${escapeHTML(p.jobs)}</p>
-   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">📞 አግኙ</button>
-   <button class="smallbtn" onclick="interest('${escapeHTML(p.id)}','${escapeHTML(p.title)}')">🤝 ፍላጎት አሳይ</button>
-  </div>
- `).join("") : '<div class="empty">የታተሙ ፕሮጀክቶች የሉም።</div>';
-}
-
-function renderJobs() {
- $("jobList").innerHTML = data.jobs.length ? data.jobs.map(j => `
-  <div class="item">
-   <h3>${escapeHTML(j.title)}</h3>
-   <p>${escapeHTML(j.company)} | ${escapeHTML(j.location)}</p>
-   <p>${escapeHTML(j.description)}</p>
-   <button class="smallbtn" onclick="contact('${escapeHTML(j.phone)}')">ያነጋግሩ</button>
-  </div>
- `).join("") : '<div class="empty">የታተሙ የሥራ ዕድሎች የሉም።</div>';
-}
-
-function renderMarket() {
- $("marketList").innerHTML = data.products.length ? data.products.map(p => `
-  <div class="item">
-   <h3>🌾 ${escapeHTML(p.title)}</h3>
-   <p>📦 ${escapeHTML(p.quantity)}</p>
-   <p>💰 ${escapeHTML(p.price)} ብር</p>
-   <p>📍 ${escapeHTML(p.location)}</p>
-   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">ሻጩን ያግኙ</button>
-  </div>
- `).join("") : '<div class="empty">የታተሙ ምርቶች የሉም።</div>';
-}
-
-function renderCommunity() {
- $("communityList").innerHTML = data.community.length ? data.community.map(p => `
-  <div class="item">
-   <h3>${escapeHTML(p.title)}</h3>
-   <p>📍 ${escapeHTML(p.location)}</p>
-   <p>${escapeHTML(p.description)}</p>
-   <p>${escapeHTML(p.support)}</p>
-   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">አግኙ</button>
-  </div>
- `).join("") : '<div class="empty">የታተሙ የማህበረሰብ ፕሮጀክቶች የሉም።</div>';
-}
-
-function renderAll() {
- renderProjects();
- renderJobs();
- renderMarket();
- renderCommunity();
-
- $("projectCount").textContent = data.projects.length;
- $("jobCount").textContent = data.jobs.length;
- $("impactProjects").textContent = data.projects.length;
- $("impactJobs").textContent = data.jobs.length;
- $("impactProducts").textContent = data.products.length;
-
- $("homeProjects").innerHTML = data.projects.slice(0, 3).map(p => `
-  <div class="item">
-   <h3>${escapeHTML(p.title)}</h3>
-   <p>${escapeHTML(p.location)}</p>
-  </div>
- `).join("") || '<div class="empty">ገና ፕሮጀክት አልተለቀቀም።</div>';
-
- $("investorList").innerHTML =
-  '<div class="empty">የኢንቨስተሮች የግል መረጃ በይፋ አይታይም። በፕሮጀክቶች ላይ ፍላጎት ማሳየት ይችላሉ።</div>';
-}
-
-function contact(phone) {
- const clean = String(phone || "").replace(/[^\d+]/g, "");
- if (clean) location.href = "tel:" + clean;
-}
-
-async function interest(projectId, title) {
- const name = prompt("ሙሉ ስምዎን ያስገቡ፦");
- if (!name) return;
- const phone = prompt("ስልክ ቁጥርዎን ያስገቡ፦");
- if (!phone) return;
- const message = prompt("መልዕክት (ካለ)፦") || "";
-
- const { error } = await db.from("investor_interests").insert({
-  project_id: projectId,
-  investor_name: name,
-  phone: phone,
-  message: message
- });
-
- if (error) {
-  alert("አልተላከም፦ " + error.message);
- } else {
-  alert("የፍላጎት መልዕክትዎ ተልኳል።");
- }
-}
-
-function showPage(id) {
- document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
- document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
- const page = $(id);
- if (page) page.classList.add("active");
- const nav = document.querySelector('[data-page="' + id + '"]');
- if (nav) nav.classList.add("active");
- window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function showModal(title, content) {
- $("modalTitle").textContent = title;
- $("modalContent").innerHTML = content;
- $("modal").classList.add("show");
-}
-function closeModal() {
- $("modal").classList.remove("show");
-}
-
-function exportData() {
- alert("የአስተዳዳሪ መግቢያ ከተገነባ በኋላ ይህ አገልግሎት ይሰራል።");
-}
-
-function changeLanguage() {
- if ($("language").value === "am") location.reload();
- else {
-  $("heroTitle").textContent = "Connecting Farmers, Investors and Jobs";
-  $("heroText").textContent = "A national platform connecting Ethiopian farmers with investors, markets and jobs.";
- }
-}
-
-$("year").textContent = new Date().getFullYear();
-renderAll();
-loadData().catch(error => {
- console.error(error);
- alert("Supabase ግንኙነት አልተሳካም። ኢንተርኔትንና የAPI ቅንብርን ያረጋግጡ።");
-});
-</script>
-
-const DB={
- users:"agri_users",projects:"agri_projects",jobs:"agri_jobs",
- products:"agri_products",community:"agri_community"
-};
-function getData(key){
- try{return JSON.parse(localStorage.getItem(DB[key])||"[]")}
- catch(e){return []}
-}
-function saveData(key,data){localStorage.setItem(DB[key],JSON.stringify(data))}
-function escapeHTML(value){
- return String(value??"").replace(/[&<>"']/g,c=>({
- "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
- })[c]);
-}
 function showPage(id){
  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
@@ -611,15 +283,14 @@ function showPage(id){
  renderAll();
  window.scrollTo({top:0,behavior:"smooth"});
 }
-function formData(form){
- return Object.fromEntries(new FormData(form).entries());
-}
+
 function addForm(formId,key){
- document.getElementById(formId).addEventListener("submit",function(e){
+ const form=document.getElementById(formId);
+ form.addEventListener("submit",function(e){
   e.preventDefault();
   const data=formData(this);
   data.id=Date.now().toString();
-  data.date=new Date().toLocaleDateString();
+  data.date=new Date().toISOString();
   const list=getData(key);
   list.unshift(data);
   saveData(key,list);
@@ -628,6 +299,7 @@ function addForm(formId,key){
   renderAll();
  });
 }
+
 addForm("registerForm","users");
 addForm("projectForm","projects");
 addForm("jobForm","jobs");
@@ -639,17 +311,22 @@ function showModal(title,content){
  document.getElementById("modalContent").innerHTML=content;
  document.getElementById("modal").classList.add("show");
 }
-function closeModal(){document.getElementById("modal").classList.remove("show")}
+
+function closeModal(){
+ document.getElementById("modal").classList.remove("show");
+}
 
 function contact(phone){
  const clean=String(phone||"").replace(/[^\d+]/g,"");
- if(!clean){alert("የስልክ ቁጥር አልተገኘም");return}
+ if(!clean){alert("የስልክ ቁጥር አልተገኘም");return;}
  window.location.href="tel:"+clean;
 }
+
 function renderProjects(){
- const search=(document.getElementById("projectSearch")?.value||"").toLowerCase();
+ const search=(document.getElementById("projectSearch").value||"").toLowerCase();
  const list=getData("projects").filter(p=>
-  (p.title+" "+p.location+" "+p.sector).toLowerCase().includes(search));
+  (p.title+" "+p.location+" "+p.sector).toLowerCase().includes(search)
+ );
  document.getElementById("projectList").innerHTML=list.length?list.map(p=>`
  <div class="item">
   <span class="tag">${escapeHTML(p.sector)}</span>
@@ -657,59 +334,84 @@ function renderProjects(){
   <p>📍 ${escapeHTML(p.location)} | 💰 ${escapeHTML(p.capital||"ያልተገለጸ")} ብር</p>
   <p>${escapeHTML(p.description)}</p>
   <p>👷 የሥራ ዕድል: ${escapeHTML(p.jobs||"0")}</p>
-  <div class="actions"><button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">📞 አግኙ</button>
-  <button class="smallbtn" onclick="interest('${escapeHTML(p.title)}','${escapeHTML(p.phone)}')">🤝 ፍላጎት አሳይ</button></div>
+  <div class="actions">
+   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">📞 አግኙ</button>
+   <button class="smallbtn" onclick="interest('${escapeHTML(p.title)}','${escapeHTML(p.phone)}')">🤝 ፍላጎት አሳይ</button>
+  </div>
  </div>`).join(""):'<div class="empty">እስካሁን ፕሮጀክት አልተገኘም።</div>';
 }
+
 function interest(title,phone){
  showModal("የኢንቨስትመንት ፍላጎት",`
  <p>ለ <b>${escapeHTML(title)}</b> ፍላጎት አሳይተዋል።</p>
  <p>ከፕሮጀክቱ አቅራቢ ጋር በስልክ ይገናኙ።</p>
  <button class="submit" onclick="contact('${escapeHTML(phone)}')">አቅራቢውን ደውል</button>`);
 }
+
 function renderJobs(){
  const list=getData("jobs");
  document.getElementById("jobList").innerHTML=list.length?list.map(j=>`
- <div class="item"><span class="tag">${escapeHTML(j.type)}</span>
- <h3>${escapeHTML(j.title)}</h3><p>${escapeHTML(j.company)} | 📍 ${escapeHTML(j.location)}</p>
- <p>${escapeHTML(j.description)}</p>
- <button class="smallbtn" onclick="contact('${escapeHTML(j.phone)}')">ለሥራው ያነጋግሩ</button></div>`).join(""):'<div class="empty">እስካሁን የሥራ ዕድል አልተገኘም።</div>';
+ <div class="item">
+  <span class="tag">${escapeHTML(j.type)}</span>
+  <h3>${escapeHTML(j.title)}</h3>
+  <p>${escapeHTML(j.company)} | 📍 ${escapeHTML(j.location)}</p>
+  <p>${escapeHTML(j.description)}</p>
+  <button class="smallbtn" onclick="contact('${escapeHTML(j.phone)}')">ለሥራው ያነጋግሩ</button>
+ </div>`).join(""):'<div class="empty">እስካሁን የሥራ ዕድል አልተገኘም።</div>';
 }
+
 function renderMarket(){
  const list=getData("products");
  document.getElementById("marketList").innerHTML=list.length?list.map(p=>`
- <div class="item"><span class="tag">${escapeHTML(p.quality)}</span>
- <h3>🌾 ${escapeHTML(p.title)}</h3>
- <p>📦 ${escapeHTML(p.quantity)} | 💰 ${escapeHTML(p.price||"ዋጋ ይጠይቁ")} ብር</p>
- <p>📍 ${escapeHTML(p.location)}</p>
- <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">ሻጩን ያግኙ</button></div>`).join(""):'<div class="empty">ምርቶች እስካሁን አልተጨመሩም።</div>';
+ <div class="item">
+  <span class="tag">${escapeHTML(p.quality)}</span>
+  <h3>🌾 ${escapeHTML(p.title)}</h3>
+  <p>📦 ${escapeHTML(p.quantity)} | 💰 ${escapeHTML(p.price||"ዋጋ ይጠይቁ")} ብር</p>
+  <p>📍 ${escapeHTML(p.location)}</p>
+  <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">ሻጩን ያግኙ</button>
+ </div>`).join(""):'<div class="empty">ምርቶች እስካሁን አልተጨመሩም።</div>';
 }
+
 function renderCommunity(){
  const list=getData("community");
  document.getElementById("communityList").innerHTML=list.length?list.map(p=>`
- <div class="item"><h3>${escapeHTML(p.title)}</h3>
- <p>📍 ${escapeHTML(p.location)}</p><p>${escapeHTML(p.description)}</p>
- <p>የሚፈለገው ድጋፍ: ${escapeHTML(p.support)}</p>
- <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">አግኙ</button></div>`).join(""):'<div class="empty">ሀሳቦች እስካሁን አልቀረቡም።</div>';
+ <div class="item">
+  <h3>${escapeHTML(p.title)}</h3>
+  <p>📍 ${escapeHTML(p.location)}</p>
+  <p>${escapeHTML(p.description)}</p>
+  <p>የሚፈለገው ድጋፍ: ${escapeHTML(p.support)}</p>
+  <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">አግኙ</button>
+ </div>`).join(""):'<div class="empty">ሀሳቦች እስካሁን አልቀረቡም።</div>';
 }
+
 function renderInvestors(){
  const users=getData("users").filter(u=>u.type==="ኢንቨስተር");
  document.getElementById("investorList").innerHTML=users.length?users.map(u=>`
- <div class="item"><h3>🤝 ${escapeHTML(u.name)}</h3>
- <p>📍 ${escapeHTML(u.region)} - ${escapeHTML(u.location)}</p>
- <p>${escapeHTML(u.details)}</p>
- <button class="smallbtn" onclick="contact('${escapeHTML(u.phone)}')">ያግኙ</button></div>`).join(""):'<div class="empty">እስካሁን ኢንቨስተር አልተመዘገበም።</div>';
+ <div class="item">
+  <h3>🤝 ${escapeHTML(u.name)}</h3>
+  <p>📍 ${escapeHTML(u.region)} - ${escapeHTML(u.location)}</p>
+  <p>${escapeHTML(u.details)}</p>
+  <button class="smallbtn" onclick="contact('${escapeHTML(u.phone)}')">ያግኙ</button>
+ </div>`).join(""):'<div class="empty">እስካሁን ኢንቨስተር አልተመዘገበም።</div>';
 }
+
 function renderAdmin(){
  const users=getData("users");
  document.getElementById("adminUserList").innerHTML=users.length?users.map(u=>`
- <div class="item"><b>${escapeHTML(u.name)}</b> — ${escapeHTML(u.type)}
- <p>${escapeHTML(u.phone)} | ${escapeHTML(u.region)} | ${escapeHTML(u.location)}</p></div>`).join(""):'<div class="empty">ተጠቃሚዎች የሉም።</div>';
+ <div class="item">
+  <b>${escapeHTML(u.name)}</b> — ${escapeHTML(u.type)}
+  <p>${escapeHTML(u.phone)} | ${escapeHTML(u.region)} | ${escapeHTML(u.location)}</p>
+ </div>`).join(""):'<div class="empty">ተጠቃሚዎች የሉም።</div>';
 }
+
 function updateStats(){
- const users=getData("users"),projects=getData("projects"),jobs=getData("jobs"),products=getData("products");
+ const users=getData("users");
+ const projects=getData("projects");
+ const jobs=getData("jobs");
+ const products=getData("products");
  const farmers=users.filter(u=>u.type==="ገበሬ"||u.type==="የገበሬ ማህበር").length;
  const investors=users.filter(u=>u.type==="ኢንቨስተር").length;
+
  document.getElementById("farmerCount").textContent=farmers;
  document.getElementById("investorCount").textContent=investors;
  document.getElementById("projectCount").textContent=projects.length;
@@ -722,23 +424,42 @@ function updateStats(){
  document.getElementById("adminProjects").textContent=projects.length;
  document.getElementById("adminJobs").textContent=jobs.length;
 }
+
 function renderAll(){
- updateStats();renderProjects();renderJobs();renderMarket();
- renderCommunity();renderInvestors();renderAdmin();
- const p=getData("projects").slice(0,3);
- document.getElementById("homeProjects").innerHTML=p.length?p.map(x=>`
- <div class="item"><h3>${escapeHTML(x.title)}</h3>
- <p>📍 ${escapeHTML(x.location)} | ${escapeHTML(x.sector)}</p>
- <p>${escapeHTML(x.description)}</p></div>`).join(""):'<div class="empty">የመጀመሪያውን ፕሮጀክት እርስዎ ያስገቡ።</div>';
+ updateStats();
+ renderProjects();
+ renderJobs();
+ renderMarket();
+ renderCommunity();
+ renderInvestors();
+ renderAdmin();
+
+ const projects=getData("projects").slice(0,3);
+ document.getElementById("homeProjects").innerHTML=projects.length?projects.map(p=>`
+ <div class="item">
+  <h3>${escapeHTML(p.title)}</h3>
+  <p>📍 ${escapeHTML(p.location)} | ${escapeHTML(p.sector)}</p>
+  <p>${escapeHTML(p.description)}</p>
+ </div>`).join(""):'<div class="empty">የመጀመሪያውን ፕሮጀክት እርስዎ ያስገቡ።</div>';
 }
+
 function exportData(){
- const data={users:getData("users"),projects:getData("projects"),
- jobs:getData("jobs"),products:getData("products"),community:getData("community")};
+ const data={
+  users:getData("users"),
+  projects:getData("projects"),
+  jobs:getData("jobs"),
+  products:getData("products"),
+  community:getData("community")
+ };
  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
  const url=URL.createObjectURL(blob);
- const a=document.createElement("a");a.href=url;a.download="agri-link-data.json";a.click();
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="agri-link-data.json";
+ a.click();
  URL.revokeObjectURL(url);
 }
+
 const translations={
  en:{
   heroTitle:"Connecting Farmers, Investors and Jobs",
@@ -747,16 +468,19 @@ const translations={
   jobs:"Jobs",market:"Marketplace",community:"Community",impact:"Impact",admin:"Admin"
  }
 };
+
 function changeLanguage(){
  const lang=document.getElementById("language").value;
- if(lang==="am"){location.reload();return}
+ if(lang==="am"){location.reload();return;}
  const t=translations.en;
  document.getElementById("heroTitle").textContent=t.heroTitle;
  document.getElementById("heroText").textContent=t.heroText;
  document.querySelectorAll("nav button").forEach(b=>{
-  const key=b.dataset.page;if(t[key])b.textContent=t[key];
+  const key=b.dataset.page;
+  if(t[key])b.textContent=t[key];
  });
 }
+
 document.getElementById("year").textContent=new Date().getFullYear();
 renderAll();
 </script>
