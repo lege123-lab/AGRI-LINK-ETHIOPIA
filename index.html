@@ -311,6 +311,282 @@ footer a{color:#f4ca68}
 </footer>
 
 <script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://etmxjclobeayoogormoo.supabase.co";
+const SUPABASE_KEY = "sb_publishable_Z4COlEbN5hnnjcTm1YWyRg_sLkm__te";
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const data = {
+ projects: [],
+ jobs: [],
+ products: [],
+ community: []
+};
+
+const $ = id => document.getElementById(id);
+
+function escapeHTML(v) {
+ return String(v ?? "").replace(/[&<>"']/g, c => ({
+  "&":"&amp;", "<":"&lt;", ">":"&gt;",
+  '"':"&quot;", "'":"&#39;"
+ }[c]));
+}
+
+function formValues(form) {
+ return Object.fromEntries(new FormData(form).entries());
+}
+
+async function submitForm(form, table, mapper) {
+ const button = form.querySelector("button[type=submit],button:not([type])");
+ if (button) {
+  button.disabled = true;
+  button.textContent = "በመላክ ላይ...";
+ }
+ try {
+  const payload = mapper(formValues(form));
+  const { error } = await db.from(table).insert(payload);
+  if (error) throw error;
+  form.reset();
+  alert("መረጃው ተልኳል። ከመታየቱ በፊት ይገመገማል።");
+  await loadData();
+ } catch (error) {
+  console.error(error);
+  alert("ስህተት ተፈጥሯል፦ " + (error.message || "እንደገና ይሞክሩ።"));
+ } finally {
+  if (button) {
+   button.disabled = false;
+   button.textContent = "እንደገና ይሞክሩ";
+  }
+ }
+}
+
+function connectForm(id, table, mapper) {
+ $(id).addEventListener("submit", e => {
+  e.preventDefault();
+  submitForm(e.target, table, mapper);
+ });
+}
+
+connectForm("registerForm", "user_profiles", d => ({
+ full_name: d.name.trim(),
+ user_type: d.type,
+ phone: d.phone.trim(),
+ email: d.email || null,
+ region: d.region || null,
+ location: d.location || null,
+ details: d.details || null
+}));
+
+connectForm("projectForm", "projects", d => ({
+ title: d.title.trim(),
+ sector: d.sector,
+ location: d.location.trim(),
+ capital: d.capital ? Number(d.capital) : 0,
+ description: d.description.trim(),
+ jobs: d.jobs ? Number(d.jobs) : 0,
+ phone: d.phone.trim(),
+ status: "pending"
+}));
+
+connectForm("jobForm", "jobs", d => ({
+ title: d.title.trim(),
+ company: d.company.trim(),
+ location: d.location.trim(),
+ job_type: d.type,
+ description: d.description.trim(),
+ phone: d.phone.trim(),
+ status: "pending"
+}));
+
+connectForm("marketForm", "products", d => ({
+ title: d.title.trim(),
+ quantity: d.quantity.trim(),
+ price: d.price ? Number(d.price) : null,
+ location: d.location.trim(),
+ phone: d.phone.trim(),
+ quality: d.quality,
+ status: "pending"
+}));
+
+connectForm("communityForm", "community_projects", d => ({
+ title: d.title.trim(),
+ location: d.location.trim(),
+ description: d.description.trim(),
+ support: d.support || null,
+ phone: d.phone.trim(),
+ status: "pending"
+}));
+
+async function loadData() {
+ const tables = [
+  ["projects", "projects"],
+  ["jobs", "jobs"],
+  ["products", "products"],
+  ["community", "community_projects"]
+ ];
+
+ for (const [key, table] of tables) {
+  const { data: rows, error } = await db
+   .from(table)
+   .select("*")
+   .eq("status", "published")
+   .order("created_at", { ascending: false });
+
+  if (error) {
+   console.error(table, error);
+   data[key] = [];
+  } else {
+   data[key] = rows || [];
+  }
+ }
+ renderAll();
+}
+
+function renderProjects() {
+ const search = ($("projectSearch").value || "").toLowerCase();
+ const rows = data.projects.filter(p =>
+  (p.title + " " + p.location + " " + p.sector)
+   .toLowerCase().includes(search)
+ );
+
+ $("projectList").innerHTML = rows.length ? rows.map(p => `
+  <div class="item">
+   <span class="tag">${escapeHTML(p.sector)}</span>
+   <h3>${escapeHTML(p.title)}</h3>
+   <p>📍 ${escapeHTML(p.location)}</p>
+   <p>💰 ${escapeHTML(p.capital)} ብር</p>
+   <p>${escapeHTML(p.description)}</p>
+   <p>👷 የሥራ ዕድል: ${escapeHTML(p.jobs)}</p>
+   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">📞 አግኙ</button>
+   <button class="smallbtn" onclick="interest('${escapeHTML(p.id)}','${escapeHTML(p.title)}')">🤝 ፍላጎት አሳይ</button>
+  </div>
+ `).join("") : '<div class="empty">የታተሙ ፕሮጀክቶች የሉም።</div>';
+}
+
+function renderJobs() {
+ $("jobList").innerHTML = data.jobs.length ? data.jobs.map(j => `
+  <div class="item">
+   <h3>${escapeHTML(j.title)}</h3>
+   <p>${escapeHTML(j.company)} | ${escapeHTML(j.location)}</p>
+   <p>${escapeHTML(j.description)}</p>
+   <button class="smallbtn" onclick="contact('${escapeHTML(j.phone)}')">ያነጋግሩ</button>
+  </div>
+ `).join("") : '<div class="empty">የታተሙ የሥራ ዕድሎች የሉም።</div>';
+}
+
+function renderMarket() {
+ $("marketList").innerHTML = data.products.length ? data.products.map(p => `
+  <div class="item">
+   <h3>🌾 ${escapeHTML(p.title)}</h3>
+   <p>📦 ${escapeHTML(p.quantity)}</p>
+   <p>💰 ${escapeHTML(p.price)} ብር</p>
+   <p>📍 ${escapeHTML(p.location)}</p>
+   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">ሻጩን ያግኙ</button>
+  </div>
+ `).join("") : '<div class="empty">የታተሙ ምርቶች የሉም።</div>';
+}
+
+function renderCommunity() {
+ $("communityList").innerHTML = data.community.length ? data.community.map(p => `
+  <div class="item">
+   <h3>${escapeHTML(p.title)}</h3>
+   <p>📍 ${escapeHTML(p.location)}</p>
+   <p>${escapeHTML(p.description)}</p>
+   <p>${escapeHTML(p.support)}</p>
+   <button class="smallbtn" onclick="contact('${escapeHTML(p.phone)}')">አግኙ</button>
+  </div>
+ `).join("") : '<div class="empty">የታተሙ የማህበረሰብ ፕሮጀክቶች የሉም።</div>';
+}
+
+function renderAll() {
+ renderProjects();
+ renderJobs();
+ renderMarket();
+ renderCommunity();
+
+ $("projectCount").textContent = data.projects.length;
+ $("jobCount").textContent = data.jobs.length;
+ $("impactProjects").textContent = data.projects.length;
+ $("impactJobs").textContent = data.jobs.length;
+ $("impactProducts").textContent = data.products.length;
+
+ $("homeProjects").innerHTML = data.projects.slice(0, 3).map(p => `
+  <div class="item">
+   <h3>${escapeHTML(p.title)}</h3>
+   <p>${escapeHTML(p.location)}</p>
+  </div>
+ `).join("") || '<div class="empty">ገና ፕሮጀክት አልተለቀቀም።</div>';
+
+ $("investorList").innerHTML =
+  '<div class="empty">የኢንቨስተሮች የግል መረጃ በይፋ አይታይም። በፕሮጀክቶች ላይ ፍላጎት ማሳየት ይችላሉ።</div>';
+}
+
+function contact(phone) {
+ const clean = String(phone || "").replace(/[^\d+]/g, "");
+ if (clean) location.href = "tel:" + clean;
+}
+
+async function interest(projectId, title) {
+ const name = prompt("ሙሉ ስምዎን ያስገቡ፦");
+ if (!name) return;
+ const phone = prompt("ስልክ ቁጥርዎን ያስገቡ፦");
+ if (!phone) return;
+ const message = prompt("መልዕክት (ካለ)፦") || "";
+
+ const { error } = await db.from("investor_interests").insert({
+  project_id: projectId,
+  investor_name: name,
+  phone: phone,
+  message: message
+ });
+
+ if (error) {
+  alert("አልተላከም፦ " + error.message);
+ } else {
+  alert("የፍላጎት መልዕክትዎ ተልኳል።");
+ }
+}
+
+function showPage(id) {
+ document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+ document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+ const page = $(id);
+ if (page) page.classList.add("active");
+ const nav = document.querySelector('[data-page="' + id + '"]');
+ if (nav) nav.classList.add("active");
+ window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showModal(title, content) {
+ $("modalTitle").textContent = title;
+ $("modalContent").innerHTML = content;
+ $("modal").classList.add("show");
+}
+function closeModal() {
+ $("modal").classList.remove("show");
+}
+
+function exportData() {
+ alert("የአስተዳዳሪ መግቢያ ከተገነባ በኋላ ይህ አገልግሎት ይሰራል።");
+}
+
+function changeLanguage() {
+ if ($("language").value === "am") location.reload();
+ else {
+  $("heroTitle").textContent = "Connecting Farmers, Investors and Jobs";
+  $("heroText").textContent = "A national platform connecting Ethiopian farmers with investors, markets and jobs.";
+ }
+}
+
+$("year").textContent = new Date().getFullYear();
+renderAll();
+loadData().catch(error => {
+ console.error(error);
+ alert("Supabase ግንኙነት አልተሳካም። ኢንተርኔትንና የAPI ቅንብርን ያረጋግጡ።");
+});
+</script>
+
 const DB={
  users:"agri_users",projects:"agri_projects",jobs:"agri_jobs",
  products:"agri_products",community:"agri_community"
